@@ -16,14 +16,15 @@ public class DBUtils {
 		}*/
 
 		String driverclass = "com.mysql.jdbc.Driver";
-		String url = "jdbc:mysql:///ec_shop";
+		String url = "jdbc:mysql:///shop";
 		String user = "root";
-		String password = "root";
+		String password = "123456";
 		Connection conn = null;
 
 		try {
 			Class.forName(/* "com.mysql.jdbc.Driver" */driverclass);
 			conn = DriverManager.getConnection(url, user, password);
+		    System.out.println("数据库连接成功");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
