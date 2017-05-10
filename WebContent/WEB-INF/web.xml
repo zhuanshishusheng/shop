@@ -18,4 +18,13 @@
      <servlet-name>SortServlet</servlet-name>  
      <url-pattern>/sort</url-pattern>   
  </servlet-mapping>
+ 
+ <servlet>  
+     <servlet-name>GoodServlet</servlet-name> 
+     <servlet-class>servlet.sort.GoodServlet</servlet-class> 
+ </servlet>
+ <servlet-mapping>
+     <servlet-name>GoodServlet</servlet-name>  
+     <url-pattern>/good</url-pattern>   
+ </servlet-mapping>
 </web-app>

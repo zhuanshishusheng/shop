@@ -10,16 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bean.GoodBean;
 import bean.SortBean;
 import dao.SortDao;
 import util.CommonUtil;
+//http://localhost:8080//shop/good?type=日韩风
 
-/**
- * http://localhost:8080//shop/sort?type=recommend
- * @author Administrator
- *
- */
-public class SortServlet extends HttpServlet {
+public class GoodServlet extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest arg0, HttpServletResponse arg1) throws ServletException, IOException {
 	
@@ -29,10 +26,11 @@ public class SortServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+	    
 		String type=req.getParameter("type");
-		
+		type = new String(type.getBytes("ISO8859-1"),"UTF-8");
 		SortDao dao=new SortDao();
-		List<SortBean> list=dao.getSortImageList(type);
+		List<GoodBean> list=dao.getGoodsLlist(type);
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("response", "sort");
 		data.put("data", list);
@@ -43,5 +41,6 @@ public class SortServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		this.doGet(req, resp);
 	}
+
 
 }
