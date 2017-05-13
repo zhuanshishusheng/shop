@@ -1,8 +1,10 @@
 package dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ColumnListHandler;
 
@@ -35,4 +37,18 @@ public class SortDao {
 		return null;
 		
 	}
+	
+	public GoodBean getGood(int goodid) {
+		String sql = "select * from goods where id = ?";
+
+		try {
+			GoodBean good = runner.query(sql, new BeanHandler<GoodBean>(
+					GoodBean.class), goodid);
+			return good;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
 }

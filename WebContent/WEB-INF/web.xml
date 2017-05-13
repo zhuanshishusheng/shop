@@ -9,22 +9,56 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <servlet-name>SortServlet</servlet-name>
+    <servlet-class>servlet.sort.SortServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SortServlet</servlet-name>
+    <url-pattern>/sort</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>GoodServlet</servlet-name>
+    <servlet-class>servlet.sort.GoodServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoodServlet</servlet-name>
+    <url-pattern>/good</url-pattern>
+  </servlet-mapping>
   
-  <servlet>  
-     <servlet-name>SortServlet</servlet-name> 
-     <servlet-class>servlet.sort.SortServlet</servlet-class> 
- </servlet>
- <servlet-mapping>
-     <servlet-name>SortServlet</servlet-name>  
-     <url-pattern>/sort</url-pattern>   
- </servlet-mapping>
- 
- <servlet>  
-     <servlet-name>GoodServlet</servlet-name> 
-     <servlet-class>servlet.sort.GoodServlet</servlet-class> 
- </servlet>
- <servlet-mapping>
-     <servlet-name>GoodServlet</servlet-name>  
-     <url-pattern>/good</url-pattern>   
- </servlet-mapping>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>servlet.user.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>CarSaveServlet</servlet-name>
+    <servlet-class>servlet.car.CarSaveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CarSaveServlet</servlet-name>
+    <url-pattern>/carsave</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>CarListServlet</servlet-name>
+    <servlet-class>servlet.car.CarListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CarListServlet</servlet-name>
+    <url-pattern>/carlist</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>GoodInfoServlet</servlet-name>
+    <servlet-class>servlet.car.GoodInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoodInfoServlet</servlet-name>
+    <url-pattern>/goodinfo</url-pattern>
+  </servlet-mapping>
 </web-app>
