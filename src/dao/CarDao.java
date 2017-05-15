@@ -25,8 +25,18 @@ public class CarDao {
 		}
 		return null;
 	}
-
-	
+    /*
+     * 删除购物车中信息
+     */
+	public void deleteCar(String userid,String goodid) {
+		String sql = "delete from car where userid=? and goodid=?";
+		try {
+			runner.update(sql, userid,goodid);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+ 
 	/**
 	 * 地址保存，可能是修改，也可能是新增
 	 * 

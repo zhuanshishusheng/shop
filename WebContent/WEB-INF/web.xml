@@ -61,4 +61,22 @@
     <servlet-name>GoodInfoServlet</servlet-name>
     <url-pattern>/goodinfo</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SubmitServlet</servlet-name>
+    <servlet-class>servlet.order.SubmitServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubmitServlet</servlet-name>
+    <url-pattern>/submit</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>OrderListServlet</servlet-name>
+    <servlet-class>servlet.order.OrderListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrderListServlet</servlet-name>
+    <url-pattern>/orderlist</url-pattern>
+  </servlet-mapping>
 </web-app>
