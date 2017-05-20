@@ -6,6 +6,7 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
+
 import bean.UserBean;
 import util.DataSourceManager;
 
@@ -41,7 +42,22 @@ public class UserDao {
 		return null;
 	}
 
-	
+	public boolean register(UserBean user) {
+		String sql1 = "select * from user where username = ?";
+		String sql2 = "INSERT INTO user(username,password) VALUES(?,?)";
+		try {
+			UserBean registerUser = runner.query(sql1, new BeanHandler<UserBean>(
+					UserBean.class), user.getUsername());
+			if (registerUser != null) {
+				return true;
+			} else if (user.getPassword() != null) {
+				runner.update(sql2, user.getUsername(), user.getPassword());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 	
 
 }

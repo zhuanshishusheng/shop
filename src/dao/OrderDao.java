@@ -25,24 +25,24 @@ public class OrderDao {
 		try {
 			switch (type) {
 			case 1:
-				String queryOneMinuteSql = "select * from orderinfo where  and userid=? and type='待付款'";
+				String queryOneMinuteSql = "select * from orderinfo where userid=? and type='待付款'";
 				List<OrderBean> infos = runner.query(queryOneMinuteSql,
 						new BeanListHandler<OrderBean>(OrderBean.class),
 						userId
 				);
 				return infos;
 			case 2:
-				queryOneMinuteSql = "select * from orderinfo where  and userid=? and type='待发货'";
+				queryOneMinuteSql = "select * from orderinfo where userid=? and type='待发货'";
 				infos = runner.query(queryOneMinuteSql,
 						new BeanListHandler<OrderBean>(OrderBean.class),userId);
 				return infos;
 			case 3:
-				String queryCancelSql = "select * from orderinfo where  and userid=? and type='待收货'";
+				String queryCancelSql = "select * from orderinfo where userid=? and type='待收货'";
 				infos = runner.query(queryCancelSql,
 						new BeanListHandler<OrderBean>(OrderBean.class),userId);
 				return infos;
 			case 4:
-				String querySql = "select * from orderinfo where  and userid=? and type='待评价'";
+				String querySql = "select * from orderinfo where userid=? and type='待评价'";
 				infos = runner.query(querySql,
 						new BeanListHandler<OrderBean>(OrderBean.class),userId);
 				return infos;
@@ -125,7 +125,7 @@ public class OrderDao {
 	public void addOrder(OrderBean info) {
 		String sql = "insert into orderinfo (orderid,userid,time,type,price) values (?,?,?,?,?)";
 		try {
-			runner.update(sql,info.getOrderid(),info.getUserid(),info.getTime(),info.getStatus(),info.getPrice());
+			runner.update(sql,info.getOrderid(),info.getUserid(),info.getTime(),info.getType(),info.getPrice());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

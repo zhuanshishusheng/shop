@@ -4,8 +4,14 @@ public class OrderBean {
     private String orderid;
     private int userid;
     private String time;
-    private String status;
-    private int price;
+    private String type;
+    public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	private int price;
 	public String getOrderid() {
 		return orderid;
 	}
@@ -24,12 +30,7 @@ public class OrderBean {
 	public void setTime(String time) {
 		this.time = time;
 	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
+	
 	public int getPrice() {
 		return price;
 	}

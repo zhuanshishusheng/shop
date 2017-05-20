@@ -119,7 +119,7 @@ public class SubmitServlet extends HttpServlet{
 			info.setUserid(Integer.parseInt(userid));
 			info.setPrice((int)totalPrice);
 			info.setTime(System.currentTimeMillis() + "");
-			info.setStatus("待付款");
+			info.setType("待付款");
 			orderDao.addOrder(info);
 
 			Map<String, Object> orderInfo = new HashMap<String, Object>();

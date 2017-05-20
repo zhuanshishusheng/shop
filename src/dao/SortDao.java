@@ -50,5 +50,18 @@ public class SortDao {
 			return null;
 		}
 	}
+	public List<GoodBean> getSearchProducts(String keyword) {
+		
+		String sql = "select * from goods where type like ?";
+		try {
+			List<GoodBean> productList = runner.query(sql,
+					new BeanListHandler<GoodBean>(GoodBean.class), "%" + keyword
+							+ "%");
+			return productList;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 }
