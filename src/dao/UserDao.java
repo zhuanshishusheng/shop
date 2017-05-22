@@ -1,12 +1,13 @@
 package dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
-
+import bean.AddressBean;
 import bean.UserBean;
 import util.DataSourceManager;
 
@@ -57,6 +58,29 @@ public class UserDao {
 			e.printStackTrace();
 		}
 		return false;
+	}
+	
+	public void updateDefaultAddress(AddressBean address){
+		String sql = "update user set area=? where userid=?";
+		try {
+			runner.update(sql,address.getId(), address.getUserid());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	public UserBean getUserInfo(String userid) {
+
+		String sql = "SELECT * FROM user WHERE userid=?";
+		try {
+			UserBean userinfo = runner.query(sql,
+					new BeanHandler<UserBean>(UserBean.class), userid);
+			return userinfo;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 

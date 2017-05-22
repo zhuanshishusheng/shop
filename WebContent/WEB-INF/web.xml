@@ -97,4 +97,31 @@
     <servlet-name>RegisterServlet</servlet-name>
     <url-pattern>/register</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AddressListServlet</servlet-name>
+    <servlet-class>servlet.address.AddressListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddressListServlet</servlet-name>
+    <url-pattern>/addresslist</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AddressAddServlet</servlet-name>
+    <servlet-class>servlet.address.AddressAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddressAddServlet</servlet-name>
+    <url-pattern>/addressadd</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AddressDeleteServlet</servlet-name>
+    <servlet-class>servlet.address.AddressDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddressDeleteServlet</servlet-name>
+    <url-pattern>/addressdelete</url-pattern>
+  </servlet-mapping>
 </web-app>
